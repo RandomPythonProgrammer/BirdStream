@@ -1,5 +1,6 @@
 import flask
 import cv2
+import sys
 
 app = flask.Flask(__name__)
 camera = cv2.VideoCapture(0)
@@ -28,4 +29,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host=sys.argv[0], port=int(sys.argv[1]))
